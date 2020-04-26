@@ -1,0 +1,82 @@
+:root {
+  --hoverMenuItemHeight: 30px;
+}
+
+a {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+nav {
+  background-color: dodgerblue;
+  display: inline-block;
+  width: 100%;
+}
+
+.menu {
+  width: calc(100% / 4);
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  color: white;
+}
+
+.menu:hover {
+  background-color: rgb(58, 156, 255);
+}
+
+.menu h2 {
+  margin: 0;
+  padding: 0;
+  height: 2.5rem;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu.hoverable:hover {
+  background-color: initial;
+}
+
+.menu.hoverable h2 {
+  cursor: default;
+}
+
+.menu.hoverable ul {
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  background: rgb(78, 166, 255);
+  transition: height 0.5s ease, color 0.25s linear;
+}
+
+.menu.hoverable li {
+  z-index: 100;
+  background-color: inherit;
+  overflow: hidden;
+  color: inherit;
+  font-size: 0.75rem;
+  height: var(--hoverMenuItemHeight);
+  transition: background-color 0.25s linear;
+}
+
+.menu.hoverable li:hover {
+  background-color: rgb(142, 198, 255);
+}
